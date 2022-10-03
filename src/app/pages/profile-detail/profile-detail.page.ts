@@ -34,7 +34,7 @@ export class ProfileDetailPage implements OnInit {
   getFile(event:any) {
     const file = event.target?.files[0];
     console.log(file);
-    this.storage.upload('demo',file).then((res) => {
+    this.storage.upload(`${Math.floor(Math.random() * 1000)}`,file).then((res) => {
       console.log('file uploaded?',res);
     })
   }
