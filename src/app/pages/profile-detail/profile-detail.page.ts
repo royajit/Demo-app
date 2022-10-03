@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { ActivatedRoute } from '@angular/router';
 import { PhotoService } from 'src/app/services/photo.service';
 
@@ -21,7 +22,7 @@ export class ProfileDetailPage implements OnInit {
     imgUrl:''
   }
 
-  constructor(private router: ActivatedRoute,private photoService : PhotoService) { }
+  constructor(private router: ActivatedRoute,public photoService : PhotoService,private storage : AngularFireStorage) { }
 
   ngOnInit() {
     this.router.params.subscribe((res:profileData) => {
@@ -29,11 +30,17 @@ export class ProfileDetailPage implements OnInit {
       this.data.imgUrl = res.imgUrl;
     })
   }
+
+  getFile(event:any) {
+    const file = event.target?.files[0];
+    console.log(file);
+    this.storage.upload('demo',file).then((res) => {
+      console.log('file uploaded?',res);
+    })
+  }
+
   addPhotoToGallery() {
     this.photoService.addNewToGallery();
-  }
-  getFile(event: any) {
-    console.log(event.target.files);
   }
 
 }

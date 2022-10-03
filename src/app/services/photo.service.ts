@@ -21,19 +21,19 @@ export class PhotoService {
   constructor(private store : AngularFireStorage ) { }
 
   public async addNewToGallery() {
-    // Take a photo
     const capturedPhoto = await Camera.getPhoto({
-      resultType: CameraResultType.Uri,
+      resultType: CameraResultType.Base64,
       source: CameraSource.Camera,
       quality: 100
     });
     console.log(JSON.stringify(capturedPhoto));
+    // this.store.upload('hjghhvhbj',capturedPhoto.dataUrl).then((res:any) => {
+    //   console.log('photo uploded?',res);
+    // })
     this.photos.unshift({
       filepath: "soon...",
       webviewPath: capturedPhoto.webPath
     });
-    // const savedImageFile:any = await this.savePicture(capturedPhoto);
-    // this.photos.unshift(savedImageFile);
   }
 
   private async savePicture(photo: Photo) {

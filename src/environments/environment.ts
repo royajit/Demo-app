@@ -5,14 +5,12 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: '<your-key>',
-    authDomain: '<your-project-authdomain>',
-    databaseURL: '<your-database-URL>',
-    projectId: '<your-project-id>',
-    storageBucket: '<your-storage-bucket>',
-    messagingSenderId: '<your-messaging-sender-id>',
-    appId: '<your-app-id>',
-    measurementId: '<your-measurement-id>'
+    apiKey: "AIzaSyDlpglDsedK452yBgZtBrhZlKswcme6k2Y",
+    authDomain: "ionicdemoapp-9b46c.firebaseapp.com",
+    projectId: "ionicdemoapp-9b46c",
+    storageBucket: "ionicdemoapp-9b46c.appspot.com",
+    messagingSenderId: "15386828867",
+    appId: "1:15386828867:web:e1891ff5d1736189ed34f6"
   }
 };
 /*

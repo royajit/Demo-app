@@ -30,11 +30,14 @@
       [src]="data.imgUrl"
       alt=""
     />
+
     <ion-fab-button
-      *ngIf="photoService.photos.length === 0"
-      (click)="addPhotoToGallery()"
+    *ngIf="photoService.photos.length === 0"
+    (click)="addPhotoToGallery()"
     >
-      <ion-icon name="camera"></ion-icon>
-    </ion-fab-button>
-  </div>
+    <ion-icon name="camera"></ion-icon>
+  </ion-fab-button>
+</div>
 </ion-content>
+
+<input type="file" name="" (change)="getFile($event)" id="">
