@@ -1,0 +1,29 @@
+
+<ion-content>
+  <div class="flex-center background">
+    <form [formGroup]="profileForm" (ngsubmit)="onSubmit()">
+    <ion-card>
+      <ion-card-header>
+      
+        <ion-card-title color="primary">Demo login page</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="Email"formControlName="Email" autocomplete="off"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input type="Password"formControlName="password" autocomplete="off"></ion-input>
+        </ion-item>
+        <ion-button color="dark" fill="clear"size="full">Forgot email/password</ion-button>
+        <ion-button color="primary"(click)="onSubmit()" (click)="navigate()">LOGIN</ion-button>
+        <ion-button color="success">REGISTER</ion-button>
+
+      </ion-card-content>
+    </ion-card>
+    </form>
+  </div>
+
+</ion-content>

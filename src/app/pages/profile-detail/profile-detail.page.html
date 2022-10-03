@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>profileDetail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div
+    style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    "
+  >
+    <p style="font-size: 20px; font-family: system-ui; font-weight: 400">
+      {{data.name}}
+    </p>
+    <div *ngIf="photoService.photos?.length > 0">
+      <ion-col
+        size="6"
+        multiple
+        *ngFor="let photo of photoService.photos; index as position"
+      >
+        <ion-img style="width: 200px" [src]="photo.webviewPath"></ion-img>
+      </ion-col>
+    </div>
+    <img
+      *ngIf="(photoService.photos?.length) === 0"
+      [src]="data.imgUrl"
+      alt=""
+    />
+    <ion-fab-button
+      *ngIf="photoService.photos.length === 0"
+      (click)="addPhotoToGallery()"
+    >
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+  </div>
+</ion-content>

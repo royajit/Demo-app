@@ -1,0 +1,8 @@
+
+<ion-card *ngFor="let item of arr">
+  <div style="display: flex;justify-content:center;align-items:center;height: 200px;flex-direction: column;"(click)="navigate(item.imgUrl,item.name)">
+    <img class="img" [src]="item.imgUrl">
+    <p class="name">{{item.name}}</p>
+  </div>
+</ion-card>
+

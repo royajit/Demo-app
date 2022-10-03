@@ -1,0 +1,20 @@
+ion-button[color="dark"] {
+    text-transform: initial;
+}
+
+.background {
+    background-color: green;
+}
+
+.img {
+    max-width: 100%;
+    border: 0;
+    height: 6rem;
+    width: 6rem;
+    border-radius: 4rem;
+}
+.name {
+    font-size: 20px;
+    font-family: system-ui;
+    font-weight: 400;
+}
